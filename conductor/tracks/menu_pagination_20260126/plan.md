@@ -1,0 +1,16 @@
+# Implementation Plan: Menu Grid Pagination and Row Constraint
+
+## Phase 1: Grid Logic
+- [x] Task: Create helper for dynamic page size 8c8d0e3
+    - [ ] Write tests for responsive page size
+    - [ ] Implement calculation logic
+- [ ] Task: Conductor - User Manual Verification 'Phase 1: Grid Logic' (Protocol in workflow.md)
+
+## Phase 2: Pagination State
+- [ ] Task: Add current page state to MenuGrid
+    - [ ] Write tests for state changes
+    - [ ] Implement state and item slicing
+- [ ] Task: Functionalize pagination controls
+    - [ ] Write tests for button clicks
+    - [ ] Update UI components
+- [ ] Task: Conductor - User Manual Verification 'Phase 2: Pagination State' (Protocol in workflow.md)
