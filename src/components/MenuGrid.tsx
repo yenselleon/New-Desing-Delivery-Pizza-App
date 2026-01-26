@@ -1,8 +1,10 @@
+import { useState, useEffect } from "react";
 import { Card, CardContent } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { Star, Plus } from "lucide-react";
 import { Button } from "./ui/button";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { getMenuPageSize } from "../lib/menu-utils";
 
 export interface MenuItem {
   id: string;
@@ -21,6 +23,38 @@ interface MenuGridProps {
 }
 
 export function MenuGrid({ items, onAddToCart }: MenuGridProps) {
+  const [currentPage, setCurrentPage] = useState(1);
+  const [pageSize, setPageSize] = useState(getMenuPageSize(typeof window !== "undefined" ? window.innerWidth : 1024));
+
+  useEffect(() => {
+    const handleResize = () => {
+      setPageSize(getMenuPageSize(window.innerWidth));
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Initial check
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Calculate total pages
+  const totalPages = Math.ceil(items.length / pageSize);
+
+  // Ensure current page is valid after resize
+  useEffect(() => {
+    if (currentPage > totalPages && totalPages > 0) {
+      setCurrentPage(totalPages);
+    }
+  }, [totalPages, currentPage]);
+
+  const startIndex = (currentPage - 1) * pageSize;
+  const currentItems = items.slice(startIndex, startIndex + pageSize);
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    // Scroll to top of grid logic could go here
+  };
+
   return (
     <section className="container mx-auto px-4 py-12">
       <div className="mb-8">
@@ -31,7 +65,7 @@ export function MenuGrid({ items, onAddToCart }: MenuGridProps) {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        {items.map((item) => (
+        {currentItems.map((item) => (
           <Card
             key={item.id}
             className="group overflow-hidden hover:shadow-lg transition-shadow"
@@ -93,17 +127,20 @@ export function MenuGrid({ items, onAddToCart }: MenuGridProps) {
       </div>
 
       {/* Pagination */}
-      <div className="flex justify-center gap-2 mt-8">
-        <Button variant="outline" size="sm">
-          1
-        </Button>
-        <Button variant="outline" size="sm">
-          2
-        </Button>
-        <Button variant="outline" size="sm">
-          3
-        </Button>
-      </div>
+      {totalPages > 1 && (
+        <div className="flex justify-center gap-2 mt-8">
+          {Array.from({ length: totalPages }).map((_, i) => (
+            <Button
+              key={i + 1}
+              variant={currentPage === i + 1 ? "default" : "outline"}
+              size="sm"
+              onClick={() => handlePageChange(i + 1)}
+            >
+              {i + 1}
+            </Button>
+          ))}
+        </div>
+      )}
     </section>
   );
 }
