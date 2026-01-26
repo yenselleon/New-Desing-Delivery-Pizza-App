@@ -7,10 +7,10 @@
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Grid Logic' (Protocol in workflow.md)
 
 ## Phase 2: Pagination State
-- [ ] Task: Add current page state to MenuGrid
+- [x] Task: Add current page state to MenuGrid 54f2154
     - [ ] Write tests for state changes
     - [ ] Implement state and item slicing
-- [ ] Task: Functionalize pagination controls
+- [x] Task: Functionalize pagination controls 54f2154
     - [ ] Write tests for button clicks
     - [ ] Update UI components
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Pagination State' (Protocol in workflow.md)
