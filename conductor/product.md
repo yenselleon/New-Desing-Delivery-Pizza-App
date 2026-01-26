@@ -14,7 +14,7 @@ This project is a modern, web-based platform designed for customers to browse, c
 
 ## Key Features
 - **Interactive Pizza Builder:** A core feature allowing users to select dough types, sauces, and toppings with real-time visual feedback.
-- **Visual Menu:** A rich, image-focused menu showcasing high-quality photos of pizzas and ingredients to drive engagement.
+- **Visual Menu:** A rich, image-focused menu showcasing high-quality photos with **responsive dynamic pagination** (2-row constraint) for a streamlined browsing experience.
 - **Streamlined Checkout:** A clean and efficient process for finalizing orders.
 
 ## Visual Identity & UX

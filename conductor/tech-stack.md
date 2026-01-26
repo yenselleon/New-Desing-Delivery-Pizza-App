@@ -16,3 +16,4 @@
 - **Plugin:** @vitejs/plugin-react-swc
 - **Package Manager:** (Detected) npm/pnpm
 - **Environment:** Node.js (v20+ recommended)
+- **Testing:** Vitest with React Testing Library and JSDOM
