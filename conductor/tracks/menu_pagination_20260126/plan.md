@@ -4,7 +4,7 @@
 - [x] Task: Create helper for dynamic page size 8c8d0e3
     - [ ] Write tests for responsive page size
     - [ ] Implement calculation logic
-- [ ] Task: Conductor - User Manual Verification 'Phase 1: Grid Logic' (Protocol in workflow.md)
+- [~] Task: Conductor - User Manual Verification 'Phase 1: Grid Logic' (Protocol in workflow.md)
 
 ## Phase 2: Pagination State
 - [ ] Task: Add current page state to MenuGrid

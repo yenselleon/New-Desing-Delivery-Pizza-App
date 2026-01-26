@@ -1,0 +1,8 @@
+{
+  "track_id": "menu_pagination_20260126",
+  "type": "feature",
+  "status": "new",
+  "created_at": "2026-01-26T13:20:00Z",
+  "updated_at": "2026-01-26T13:20:00Z",
+  "description": "Implement functional pagination for the Menu Grid with a strict two-row layout constraint."
+}
