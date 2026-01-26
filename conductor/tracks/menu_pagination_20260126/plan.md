@@ -13,4 +13,4 @@
 - [x] Task: Functionalize pagination controls 54f2154
     - [ ] Write tests for button clicks
     - [ ] Update UI components
-- [ ] Task: Conductor - User Manual Verification 'Phase 2: Pagination State' (Protocol in workflow.md)
+- [~] Task: Conductor - User Manual Verification 'Phase 2: Pagination State' (Protocol in workflow.md)
